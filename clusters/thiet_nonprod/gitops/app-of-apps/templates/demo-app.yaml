@@ -1,0 +1,28 @@
+{{- if .Values.applications.demoApp.enabled }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-app
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: {{ .Values.applications.demoApp.helmRepo }}
+      targetRevision: main
+      path: {{ .Values.applications.demoApp.chartPath }}
+      helm:
+        valueFiles:
+          - $values/environments/dev/demo-values.yaml
+    - repoURL: https://github.com/YOUR_GITHUB/argocd-gitops.git
+      targetRevision: main
+      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: {{ .Values.applications.demoApp.namespace }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
+{{- end }}

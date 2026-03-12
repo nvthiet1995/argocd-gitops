@@ -1,0 +1,12 @@
+applications:
+
+  externalSecrets:
+    enabled: true
+    namespace: external-secrets
+    chartVersion: 0.12.1
+
+  demoApp:
+    enabled: true
+    namespace: demo
+    helmRepo: https://github.com/YOUR_GITHUB/demo-helm-charts.git
+    chartPath: charts/gitops-base
