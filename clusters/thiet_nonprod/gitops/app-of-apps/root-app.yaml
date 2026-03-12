@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_GITHUB/argocd-gitops.git
+    repoURL: https://github.com/nvthiet1995/argocd-gitops.git
     targetRevision: main
     path: clusters/thiet_nonprod/gitops/app-of-apps
     helm:

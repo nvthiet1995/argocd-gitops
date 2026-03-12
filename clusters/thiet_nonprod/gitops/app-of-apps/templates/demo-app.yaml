@@ -13,7 +13,7 @@ spec:
       helm:
         valueFiles:
           - $values/environments/dev/demo-values.yaml
-    - repoURL: https://github.com/YOUR_GITHUB/argocd-gitops.git
+    - repoURL: https://github.com/nvthiet1995/argocd-gitops.git
       targetRevision: main
       ref: values
   destination:

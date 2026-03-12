@@ -8,5 +8,5 @@ applications:
   demoApp:
     enabled: true
     namespace: demo
-    helmRepo: https://github.com/YOUR_GITHUB/demo-helm-charts.git
+    helmRepo: https://github.com/nvthiet1995/demo-helm-charts.git
     chartPath: charts/gitops-base
