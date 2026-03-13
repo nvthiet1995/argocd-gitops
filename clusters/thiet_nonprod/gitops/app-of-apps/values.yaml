@@ -3,7 +3,7 @@ applications:
   externalSecrets:
     enabled: true
     namespace: external-secrets
-    chartVersion: 0.16.2
+    chartVersion: 0.12.1
 
   demoApp:
     enabled: true
