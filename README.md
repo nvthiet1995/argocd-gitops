@@ -34,6 +34,12 @@ https://localhost:8080
 ./scripts/bootstrap.sh
 ```
 
+# fix docker image pullbackoff:
+```sh
+docker pull nginx:1.25-alpine
+docker pull oci.external-secrets.io/external-secrets/external-secrets:v0.12.1
+```
+
 
 # check argocd:
 
@@ -51,3 +57,4 @@ check apiVersion:
 ```sh
 kubectl get crd externalsecrets.external-secrets.io -o jsonpath='{.spec.versions[*].name}'
 ```
+
